@@ -1,38 +1,250 @@
 .App {
-  text-align: center;
+	min-height: 100%;
+	width: 100vw;
+	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(7px);
+	background-color: #4158d0;
+	background-image: linear-gradient(58deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+	position: relative;
+	height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Navbar {
+	border-bottom: 5px solid;
+	border-image: linear-gradient(258deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%) 1;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-shape-divider-bottom-1616070771 {
+	position: absolute;
+	bottom: 90px;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+	transform: rotate(180deg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom-shape-divider-bottom-1616070771 svg {
+	position: relative;
+	display: block;
+	width: calc(111% + 1px);
+	height: 211px;
+}
+
+.custom-shape-divider-bottom-1616070771 .shape-fill {
+	fill: #ffffff;
+}
+
+.footer-container {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 90px;
+	background-color: #4070f4;
+	display: flex;
+	justify-content: center;
+}
+.social {
+	width: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	color: #fff;
+	font-size: 40px;
+	padding: 10px;
+}
+
+.icon-footer:hover {
+	color: rgb(0, 255, 42);
+	cursor: pointer;
+
+	transition: 1s ease;
+}
+/* .social-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} */
+
+button {
+	margin-right: 15px;
+	border: none;
+	outline: none;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	width: 50px;
+	justify-content: center;
+	border-radius: 5px;
+	background-color: transparent;
+	border: 3px solid #fff;
+	cursor: pointer;
+}
+
+button:hover {
+	border: 3px solid rgb(0, 255, 42);
+	transition: 1s ease;
+}
+
+input {
+	margin-right: 10px;
+	border: none;
+	outline: none;
+	padding: 5px;
+	height: 22px;
+	border-radius: 5px;
+	border: 2px solid #fff;
+}
+
+.icon-search {
+	color: rgb(255, 255, 255);
+	font-size: 20px;
+}
+
+.Navbar {
+	background-color: #4070f4;
+	width: 100%;
+	height: 100px;
+	display: flex;
+}
+
+.Navbar .leftSide {
+	flex: 50%;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	margin-left: 50px;
+}
+
+.Navbar .leftSide .links {
+	max-height: 100px;
+	display: flex;
+	align-items: center;
+}
+
+.Navbar .leftSide .links a {
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	margin-left: 15px;
+	height: 100%;
+	font-weight: bold;
+	cursor: pointer;
+}
+.Navbar .leftSide .links a:hover {
+	color: rgb(0, 255, 42);
+	transition: 1s ease;
+}
+
+.Navbar .leftSide .links .burger {
+	display: none;
+}
+
+.Navbar .rightSide {
+	flex: 50%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 50px;
+}
+.mobile-links-container {
+	position: absolute;
+	width: 100%;
+	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(7px);
+	background: rgba(0, 0, 0, 0.45);
+	z-index: 10000;
+	transition: width 2s ease;
+}
+
+.mobile-links {
+	display: none;
+}
+
+.mobile-links-visible {
+	transition: width 2s ease;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(7px);
+	background: rgba(0, 0, 0, 0.45);
+	z-index: 10000;
+}
+
+.mobile-links-visible a {
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 20px;
+	color: #fff;
+	/* display: none; */
+}
+
+.mobile-links-visible a:hover {
+	color: rgb(0, 255, 42);
+	transition: 1s ease;
+}
+
+/* RESPONSIVE START */
+
+@media only screen and (max-width: 830px) {
+	.Navbar .leftSide .links a {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 785px) {
+	.Navbar .leftSide .links a {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-width: 745px) {
+	.Navbar .leftSide .links a {
+		display: none;
+	}
+	.Navbar .leftSide .links .burger {
+		display: flex;
+		margin-left: 15px;
+		font-size: 40px;
+		color: #fff;
+		cursor: pointer;
+	}
+}
+
+@media only screen and (min-width: 745px) {
+	.mobile-links-container {
+		background: rgba(0, 0, 0, 0.85);
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	.Navbar .rightSide {
+		flex: 50%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-right: 0px;
+	}
+	.Navbar .leftSide {
+		flex: 50%;
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		margin-left: 0px;
+	}
 }
